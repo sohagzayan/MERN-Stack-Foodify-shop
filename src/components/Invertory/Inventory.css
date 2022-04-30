@@ -1,0 +1,46 @@
+.inventory_product {
+  border-radius: 10px;
+  background: linear-gradient(145deg, #ececec, #fdfdfd);
+  box-shadow: 30px 30px 50px #dcdcdc, -30px -30px 50px #ffffff;
+  margin-bottom: 30px;
+}
+
+.btn-product {
+  background-color: #f4bc30;
+  box-shadow: 4px 4px 8px #b2b2b3, -9px -9px 12px #ffffff;
+  color: white;
+  padding: 15px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 10px;
+  text-transform: uppercase;
+  transition: 0.2s ease-in;
+}
+
+.btn-product:hover {
+  background-color: #32b768;
+}
+
+.React-Love {
+  border: 2px solid #ffba43;
+  padding: 12px;
+  transition: 0.3s ease-out;
+}
+
+.React-Love.active {
+  background-color: #ffba43;
+  border-radius: 5px;
+}
+.React-Love.active .love {
+  color: white;
+}
+
+.card-date {
+  padding: 5px 15px;
+  background: #f8f9fa;
+  box-shadow: inset 5px 5px 10px #e2e2e2, inset -5px -5px 10px #e8e8e8;
+  display: inline-block;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
