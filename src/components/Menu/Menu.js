@@ -1,9 +1,13 @@
 import React from 'react';
+import { AiOutlineClose } from 'react-icons/ai';
 
-const Menu = () => {
+const Menu = ({showMenu , setShowMenu}) => {
     return (
-        <div>
-            <ul className='flex items-center'>
+        <div className=''>
+            <ul className={showMenu ? "flex items-center menuBer active" : "flex items-center menuBer "}>
+                <span className='CloseIcons cursor-pointer'>
+                    <AiOutlineClose onClick={()=> setShowMenu(!showMenu) } />
+                </span>
                 <li className='px-4 py-1'>
                     <a className='   text-black_soft font-medium text-lg ' href="/">Home</a>
                 </li>

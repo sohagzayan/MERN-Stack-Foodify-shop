@@ -1,0 +1,123 @@
+/* hero section */
+
+.heroTitle {
+  font-size: 5.5rem;
+  line-height: 90px;
+  font-weight: 700;
+}
+
+.heroTitleHeilight {
+  font-weight: 800;
+  position: relative;
+  z-index: 99;
+}
+
+.heroTitleHeilight::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 15px;
+  background-color: #e1e1e5;
+  bottom: 10px;
+  left: 0;
+  z-index: -1;
+}
+
+.btn {
+  background-color: #f3f3f5;
+  box-shadow: 9px 9px 12px #b2b2b3, -9px -9px 12px #ffffff;
+  color: #0d0d25;
+  padding: 15px 20px;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+.btn-hero-feedback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-hero-feedback span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f3f5;
+  width: 60px;
+  height: 60px;
+  box-shadow: 9px 9px 12px #b2b2b3, -9px -9px 12px #ffffff;
+  border-radius: 50%;
+}
+.playIcons {
+  font-size: 22px;
+}
+.heroWrapper {
+  position: relative;
+  z-index: -1;
+  margin-top: 70px;
+}
+
+.CloseIcons {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 30px;
+  color: tomato;
+  display: none;
+}
+.hero_content {
+  width: 700px;
+}
+.toggleMenuIcons {
+  display: none;
+}
+
+@media (max-width: 1279px) {
+  .heroTitle {
+    font-size: 4.5rem;
+  }
+}
+@media (max-width: 519px) {
+  .heroTitle {
+    font-size: 3.5rem;
+    line-height: 60px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .toggleMenuIcons {
+    display: block;
+  }
+  .heroWrapper {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    margin: auto;
+  }
+  .hero_content {
+    width: 100%;
+  }
+
+  .menuBer {
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    flex-direction: column;
+    padding: 20px;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    transform: translateY(-300px);
+  }
+  .hero_content {
+    margin-bottom: 40px;
+  }
+  .menuBer.active {
+    transform: translateY(0px);
+  }
+
+  .CloseIcons {
+    display: block;
+  }
+}
