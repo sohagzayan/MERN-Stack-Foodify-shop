@@ -16,6 +16,17 @@
   text-transform: uppercase;
   transition: 0.2s ease-in;
 }
+.btn-inventory {
+  background-color: #32b768;
+  box-shadow: 4px 4px 8px #b2b2b3, -9px -9px 12px #ffffff;
+  color: white;
+  padding: 15px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 10px;
+  text-transform: uppercase;
+  transition: 0.2s ease-in;
+}
 
 .btn-product:hover {
   background-color: #32b768;

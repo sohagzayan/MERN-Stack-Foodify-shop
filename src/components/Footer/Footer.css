@@ -1,0 +1,14 @@
+.social_icons_footer {
+  background-color: #f3f3f5;
+  box-shadow: 9px 9px 12px #b2b2b3, -9px -9px 12px #ffffff;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  border-radius: 30px;
+}
+
+.social_icons_footer {
+}

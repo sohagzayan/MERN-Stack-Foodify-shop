@@ -8,6 +8,7 @@ module.exports = {
         green_soft: "#32B768",
         yellow_soft: "#ffba43",
         silver_soft: "#bfbfbf",
+       gray_soft: "#F3F3F5",
       },
     },
   },
