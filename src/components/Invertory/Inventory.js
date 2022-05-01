@@ -9,6 +9,9 @@ const Inventory = () => {
                 <InventoryProduct   />
                 <InventoryProduct   />
                 <InventoryProduct   />
+                <InventoryProduct   />
+                <InventoryProduct   />
+                <InventoryProduct   />
            </div>
             <div className='text-center'>
             <button className='btn-inventory mt-6'>

@@ -19,7 +19,7 @@ const Hero = () => {
         </p>
         <div className="flex md:flex-row flex-col justify-start items-start ">
           <button className="btn btn-hero mt-5">Check Our Menu</button>
-          <button className="btn-hero-feedback mt-4 md:ml-5 text-2xl">
+          <button className="btn-hero-feedback mt-4 md:ml-5  text-2xl">
         
             <span className="mr-5">
               <FaPlay className="playIcons text-green_soft" />
