@@ -97,4 +97,7 @@
   .faqWrapper::before {
     left: 7px;
   }
+  .faqCard:nth-child(even) {
+    margin-top: 0px;
+  }
 }

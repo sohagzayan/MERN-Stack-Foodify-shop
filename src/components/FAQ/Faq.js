@@ -11,8 +11,8 @@ const Faq = () => {
     return (
         <div className='faq mt-20 '>
             <div className="text-center container mx-auto px-4">
-                <span className='small-title'>FAQS</span>
-                <h2 className='text-4xl font-medium tracking-wider mb-4 leading-snug'>Frequently Asked <br /> Question</h2>
+                <span className='small-title mb-2'>FAQS</span>
+                <h2 className='text-4xl font-medium  tracking-wider mb-10 leading-snug'>Frequently Asked <br /> Question</h2>
                 <div className=' faqWrapper  '>
                     {
                         faq.map(data => <FaqCard data={data} /> )

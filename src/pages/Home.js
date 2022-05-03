@@ -4,6 +4,8 @@ import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import Hero from "../components/Hero/Hero";
 import Inventory from "../components/Invertory/Inventory";
+import OpeningTable from "../components/OpeningTable/OpeningTable";
+import WeProvide from "../components/WeProvide.js/WeProvide";
 
 const Home = () => {
   return (
@@ -12,6 +14,8 @@ const Home = () => {
       <Hero />
       <Inventory />
       <Faq/>
+      <WeProvide />
+      <OpeningTable />
       <Footer />
     </>
   );
