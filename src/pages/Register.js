@@ -1,8 +1,8 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import bannerImage from "../../assets/image/foodbox.png";
-import Footer from "../Footer/Footer";
-import Header from "../Header/Header";
+import bannerImage from "../assets/image/foodbox.png";
+import Footer from "../components/Footer/Footer";
+import Header from "../components/Header/Header";
 import "./Register.css";
 const Register = () => {
   return (

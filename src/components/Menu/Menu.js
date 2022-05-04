@@ -1,8 +1,19 @@
 import React from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
+import { useAuthContext } from "../../context/AuthContent";
+
 const Menu = ({ showMenu, setShowMenu }) => {
-  const user = false;
+  const {username , logOut} = useAuthContext()
+
+  const handesignOut = async ()=>{
+    try{
+      await logOut()
+    }
+    catch(err){
+      console.log(err);
+    }
+  }
   return (
     <div className="">
       <ul
@@ -25,7 +36,7 @@ const Menu = ({ showMenu, setShowMenu }) => {
             Blog
           </NavLink>
         </li>
-        {user ? (
+        {username ? (
           <li className="px-4 py-1">
             <NavLink className="   text-black_soft font-medium text-lg " to="/">
               Manage Product
@@ -34,7 +45,7 @@ const Menu = ({ showMenu, setShowMenu }) => {
         ) : (
           ""
         )}
-        {user ? (
+        {username ? (
           <li className="px-4 py-1">
             <NavLink className="   text-black_soft font-medium text-lg " to="/">
               Add Product
@@ -43,7 +54,7 @@ const Menu = ({ showMenu, setShowMenu }) => {
         ) : (
           ""
         )}
-        {user ? (
+        {username ? (
           <li className="px-4 py-1">
             <NavLink
               className=" capitalize  text-black_soft font-medium text-lg "
@@ -57,10 +68,11 @@ const Menu = ({ showMenu, setShowMenu }) => {
         )}
         <li className="px-4 py-1">
           <NavLink
+            onClick={handesignOut}
             className="   text-black_soft font-medium text-lg"
             to="/register/login"
           >
-            Login
+            {username ? "SignOut" : "Login"}
           </NavLink>
         </li>
       </ul>

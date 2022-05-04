@@ -15,7 +15,7 @@ const Faq = () => {
                 <h2 className='text-4xl font-medium  tracking-wider mb-10 leading-snug'>Frequently Asked <br /> Question</h2>
                 <div className=' faqWrapper  '>
                     {
-                        faq.map(data => <FaqCard data={data} /> )
+                        faq.map((data , index) => <FaqCard key={index} data={data} /> )
                     }
                 </div>
             </div>
