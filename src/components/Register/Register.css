@@ -1,0 +1,35 @@
+.registerPart {
+}
+
+.register-login {
+  width: 100%;
+  height: 100vh;
+}
+.fromGroup input[type="email"],
+.fromGroup input[type="password"],
+.fromGroup input[type="text"] {
+  background-color: #fff;
+  color: #333333;
+  font-size: 18px;
+  height: 50px;
+  margin-bottom: 20px;
+  padding: 12px 22px;
+  border-radius: 3px;
+  box-shadow: 0 3px 6px 0 rgb(0 0 0 / 10%), 0 0 2px 0 rgb(0 0 0 / 10%);
+  border: solid 1px #bcc2ce;
+  outline: none;
+}
+
+.btnSignUp {
+  background-color: #4f77ff;
+  border-color: #4f77ff;
+  box-shadow: 9px 9px 12px #b2b2b3, -9px -9px 12px #ffffff;
+  color: white;
+  padding: 10px 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.remember {
+  background-color: transparent !important;
+}
