@@ -3,6 +3,9 @@
   background: linear-gradient(145deg, #ececec, #fdfdfd);
   box-shadow: 30px 30px 50px #dcdcdc, -30px -30px 50px #ffffff;
   margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .btn-product {
