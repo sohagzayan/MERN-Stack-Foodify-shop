@@ -15,7 +15,32 @@
   border-radius: 10px;
   text-transform: uppercase;
   transition: 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
 }
+
+.btn-product::after {
+  content: "";
+  background: #32b768;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+.btn-product:active {
+  transform: scale(0.8);
+}
+.btn-product:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
+
 .btn-inventory {
   background-color: #32b768;
   box-shadow: 4px 4px 8px #b2b2b3, -9px -9px 12px #ffffff;
@@ -26,10 +51,30 @@
   border-radius: 10px;
   text-transform: uppercase;
   transition: 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
 }
 
-.btn-product:hover {
-  background-color: #32b768;
+.btn-inventory::after {
+  content: "";
+  background: #ffba43;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+.btn-inventory:active {
+  transform: scale(0.8);
+}
+.btn-inventory:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
 }
 
 .React-Love {
