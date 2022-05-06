@@ -9,7 +9,7 @@ const Inventory = () => {
         fetch(`http://localhost:5000/api/todo?limit=6`)
         .then(res => res.json())
         .then(data => setAllData(data))
-    },[])
+    },[allData])
 
     return (
         <div className='mt-16 container mx-auto'>

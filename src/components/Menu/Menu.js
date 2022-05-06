@@ -1,18 +1,42 @@
 import React from "react";
 import { AiOutlineClose } from "react-icons/ai";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import swal from 'sweetalert';
 import { useAuthContext } from "../../context/AuthContent";
 
 const Menu = ({ showMenu, setShowMenu }) => {
+  const navigate = useNavigate()
   const {username , logOut} = useAuthContext()
 
   const handesignOut = async ()=>{
     try{
       await logOut()
+      navigate("/register/login")
     }
     catch(err){
       console.log(err);
     }
+  }
+
+
+  const openModal = ()=>{
+    swal({
+      title: "Are you sure?",
+      text: "You LogOut Your Account ? ",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("Poof! Your imaginary file has been deleted!", {
+          icon: "success",
+        });
+        handesignOut()
+      } else {
+        swal("Your LogOut Process Cancel !");
+      }
+    });
   }
   return (
     <div className="">
@@ -32,7 +56,7 @@ const Menu = ({ showMenu, setShowMenu }) => {
           </NavLink>
         </li>
         <li className="px-4 py-1">
-          <NavLink className="   text-black_soft font-medium text-lg " to="/">
+          <NavLink className="   text-black_soft font-medium text-lg " to="/blog">
             Blog
           </NavLink>
         </li>
@@ -67,13 +91,25 @@ const Menu = ({ showMenu, setShowMenu }) => {
           ""
         )}
         <li className="px-4 py-1">
-          <NavLink
-            onClick={handesignOut}
-            className="   text-black_soft font-medium text-lg"
-            to="/register/login"
+          {
+            username ? 
+            <span
+            onClick={openModal}
+            className="   text-black_soft font-medium text-lg cursor-pointer"
+            
           >
-            {username ? "SignOut" : "Login"}
-          </NavLink>
+           SignOut
+          </span>
+          :
+          <NavLink
+          onClick={handesignOut}
+          className="   text-black_soft font-medium text-lg"
+          to="/register/login"
+        >
+          Login
+        </NavLink>
+          }
+      
         </li>
       </ul>
     </div>

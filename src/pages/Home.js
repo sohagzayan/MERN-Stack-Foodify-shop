@@ -10,6 +10,7 @@ import WeProvide from "../components/WeProvide.js/WeProvide";
 const Home = () => {
   return (
     <>
+      
       <Header />
       <Hero />
       <Inventory />

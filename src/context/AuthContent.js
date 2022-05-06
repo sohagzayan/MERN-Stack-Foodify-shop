@@ -1,13 +1,13 @@
 import {
-    createUserWithEmailAndPassword,
-    GoogleAuthProvider,
-    onAuthStateChanged,
-    sendEmailVerification,
-    sendPasswordResetEmail,
-    signInWithEmailAndPassword,
-    signInWithPopup,
-    signOut,
-    updateProfile
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  sendEmailVerification,
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+  updateProfile
 } from "firebase/auth";
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { auth } from "../fairbase.auth";
@@ -56,7 +56,7 @@ export const AuthContextProvider = ({ children }) => {
   const ForGotPassWord = async (email) => {
     await sendPasswordResetEmail(auth, email);
   };
-
+console.log(username);
   return (
     <authContext.Provider
       value={{

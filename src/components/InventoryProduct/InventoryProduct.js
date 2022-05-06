@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AiOutlineDoubleRight } from 'react-icons/ai';
 import { FiHeart } from 'react-icons/fi';
-import { useNavigate } from 'react-router-dom';
-// import image from '../../assets/image/blog-1.jpg';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const InventoryProduct = ({item}) => {
+    const [like , setLike] = useState(false)
     const navigate = useNavigate()
     const {image , foodCategory , quantity , price , supplier , title , _id} = item
     return (
@@ -22,8 +22,8 @@ const InventoryProduct = ({item}) => {
                     <span className='text-md text-green_soft tracking-wider'><span className='text-3xl font-bold'>Q</span>uantity : <span className='text-2xl font-bold'>{quantity}</span></span>
                 </div>
                 <div className='flex items-center justify-between mb-4'>
-                    <button onClick={()=> navigate(`/inventory/${_id}`)} className='btn-product flex items-center'>Update <AiOutlineDoubleRight className='text-lg ml-5 ' /> </button>
-                    <span className='React-Love active cursor-pointer'><FiHeart className='text-3xl love  text-yellow_soft' /></span>
+                    <NavLink to={"/inventory/"+_id} className='btn-product flex items-center'>Update <AiOutlineDoubleRight className='text-lg ml-5 ' /> </NavLink>
+                    <span onClick={()=> setLike(!like)} className={like ? 'React-Love active cursor-pointer' : 'React-Love  cursor-pointer'}><FiHeart className='text-3xl love  text-yellow_soft' /></span>
                 </div>
             </div>
         </div>
