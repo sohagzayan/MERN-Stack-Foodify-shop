@@ -9,7 +9,7 @@ import { useAuthContext } from '../../context/AuthContent';
 const Login = () => {
   const location = useLocation()
   const from = location.state?.from?.pathname || '/';
-  const {login} = useAuthContext()
+  const {login , googleLogin} = useAuthContext()
   const navigate = useNavigate();
   const [error, setError] = useState("");
   let schema = yup.object().shape({
@@ -34,6 +34,22 @@ const Login = () => {
       setError(err.message)
     }
   }
+
+   
+  const googleLoginFacebook = async()=>{
+    
+    try{
+       await googleLogin()
+       navigate(from , {replace : true})
+    }
+    catch(err){
+     setError(err.message)
+    }
+ 
+   }
+
+
+
     return (
         <div>
       <h2 className="text-3xl text-black_soft font-bold ">
@@ -53,7 +69,7 @@ const Login = () => {
                 <label className='cursor-pointer' htmlFor="remember">Remember me</label>
             </span>
             <span>
-                <a href="/">Forgot password?</a>
+                <NavLink to="/register/forgotPassword">Forgot password?</NavLink>
             </span>
         </div>
         <p className="text-red-600 mb-6">{error}</p>
@@ -72,10 +88,7 @@ const Login = () => {
         <button className="btnSignUp">Login with email</button>
      <span className="flex items-center justify-center mt-5">
      <GoogleButton 
-        className=""
-          onClick={() => {
-            console.log("Google button clicked");
-          }}
+        onClick={googleLoginFacebook}
         />
      </span>
       </form>

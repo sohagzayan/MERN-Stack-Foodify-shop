@@ -2,14 +2,17 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import React, { useState } from "react";
 import GoogleButton from "react-google-button";
 import { useForm } from "react-hook-form";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { useAuthContext } from "../../context/AuthContent";
 const Signup = () => {
-  const { sinUp } = useAuthContext();
+  const location = useLocation()
+  const from = location.state?.from?.pathname || '/';
+  const { sinUp , googleLogin } = useAuthContext();
   const navigate = useNavigate();
   const [error, setError] = useState("");
   console.log(error);
+
   let schema = yup.object().shape({
     username: yup.string().required(),
     password: yup.string().required().min(6).max(12),
@@ -37,6 +40,20 @@ const Signup = () => {
       setError(err.message);
     }
   };
+  
+  const googleLoginFacebook = async()=>{
+    
+   try{
+      await googleLogin()
+      navigate(from , {replace : true})
+   }
+   catch(err){
+    setError(err.message)
+   }
+
+  }
+
+
 
   return (
     <div>
@@ -89,12 +106,9 @@ const Signup = () => {
           </a>
         </p>
         <button className="btnSignUp">Signup with email</button>
-        <span className="flex items-center justify-center mt-5">
+        <span  className="flex items-center justify-center mt-5">
           <GoogleButton
-            className=""
-            onClick={() => {
-              console.log("Google button clicked");
-            }}
+            onClick={googleLoginFacebook}
           />
         </span>
         <NavLink

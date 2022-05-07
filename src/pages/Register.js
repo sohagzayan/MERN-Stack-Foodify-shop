@@ -7,6 +7,7 @@ import "./Register.css";
 const Register = () => {
   return (
     <>
+
       <Header />
       <div className="w-full ">
         <div className="registerPart grid grid-cols-1  md:grid-cols-4  lg:grid-cols-5">

@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import ForgotPassword from "../components/ForgotPasswordn/ForgotPassword";
 import Login from "../components/Login/Login";
 import RequireAuth from "../components/privateRoute/RequireAuth";
 import Signup from "../components/Signup/Signup";
@@ -23,6 +24,7 @@ const AllRoutes = () => {
       <Route path="/register" element={<Register />}>
         <Route path="login" element={<Login />} />
         <Route path="Signup" element={<Signup />} />
+        <Route path="forgotPassword" element={<ForgotPassword />} />
       </Route>
     </Routes>
   );
