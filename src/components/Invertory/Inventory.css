@@ -70,6 +70,7 @@
   opacity: 0;
   transition: all 0.8s;
 }
+
 .btn-inventory:active {
   transform: scale(0.8);
 }

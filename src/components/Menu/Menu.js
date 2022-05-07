@@ -82,9 +82,9 @@ const Menu = ({ showMenu, setShowMenu }) => {
           <li className="px-4 py-1">
             <NavLink
               className=" capitalize  text-black_soft font-medium text-lg "
-              to="/"
+              to="/myProducts"
             >
-              My <span>Product</span>
+              My Product
             </NavLink>
           </li>
         ) : (

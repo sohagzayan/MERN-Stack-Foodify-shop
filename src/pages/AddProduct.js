@@ -1,23 +1,43 @@
 import React, { useState } from "react";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
+import { useAuthContext } from "../context/AuthContent";
 import "./addProduct.css";
 const AddProduct = () => {
-  const [category , setCategory] = useState('')
-  const [title , setTitle] = useState('')
-  const [supplier , setSupplier] = useState('')
-  const [price , setPrice] = useState('')
-  const [quantity , setQuantity] = useState('')
-  const [image , setImage] = useState('')
-  const [description , setDescription] = useState('')
+  const { username } = useAuthContext();
+  console.log(username.email);
+  const [category, setCategory] = useState("");
+  const [title, setTitle] = useState("");
+  const [supplier, setSupplier] = useState("");
+  const [price, setPrice] = useState("");
+  const [quantity, setQuantity] = useState("");
+  const [image, setImage] = useState("");
+  const [description, setDescription] = useState("");
 
-  const handleAddProduct = (e) => {
-      e.preventDefault()
-      console.log(category);
-      console.log(title);
-      console.log(price);
-      console.log(image);
-      console.log(description);
+  const handleAddProduct = async (e) => {
+    e.preventDefault();
+    let newProductDocuments = {
+      image: image,
+      foodCategory: category,
+      title: title,
+      des: description,
+      supplier: supplier,
+      price: price,
+      quantity: quantity,
+      gmail : username.email
+    };
+    try {
+      await fetch("http://localhost:5000/api/todo/", {
+        method: "POST", // or 'PUT'
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newProductDocuments),
+      });
+      console.log("success to add product");
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <>
@@ -30,8 +50,8 @@ const AddProduct = () => {
           <div className="grid grid-cols-2 gap-4 max-w-xl m-auto">
             <div className="col-span-2 lg:col-span-1">
               <input
-              onChange={(e)=> setCategory(e.target.value)}
-              value={category}
+                onChange={(e) => setCategory(e.target.value)}
+                value={category}
                 type="text"
                 className="border-solid border-gray-400 border-2 p-3 md:text-xl w-full"
                 placeholder="Product Category"
@@ -40,7 +60,7 @@ const AddProduct = () => {
 
             <div className="col-span-2 lg:col-span-1">
               <input
-                onChange={(e)=> setTitle(e.target.value)}
+                onChange={(e) => setTitle(e.target.value)}
                 value={title}
                 type="text"
                 className="border-solid border-gray-400 border-2 p-3 md:text-xl w-full"
@@ -49,7 +69,7 @@ const AddProduct = () => {
             </div>
             <div className="col-span-2 lg:col-span-1">
               <input
-                onChange={(e)=> setSupplier(e.target.value)}
+                onChange={(e) => setSupplier(e.target.value)}
                 value={supplier}
                 type="text"
                 className="border-solid border-gray-400 border-2 p-3 md:text-xl w-full"
@@ -58,7 +78,12 @@ const AddProduct = () => {
             </div>
             <div className="col-span-2 lg:col-span-1">
               <input
-                onChange={(e)=> setPrice(e.target.value)}
+                onChange={(e) => {
+                  const re = /^[0-9\b]+$/;
+                  if (e.target.value === "" || re.test(e.target.value)) {
+                    setPrice(e.target.value);
+                  }
+                }}
                 value={price}
                 type="text"
                 className="border-solid border-gray-400 border-2 p-3 md:text-xl w-full"
@@ -67,7 +92,12 @@ const AddProduct = () => {
             </div>
             <div className="col-span-2 lg:col-span-1">
               <input
-                onChange={(e)=> setQuantity(e.target.value)}
+                onChange={(e) => {
+                  const re = /^[0-9\b]+$/;
+                  if (e.target.value === "" || re.test(e.target.value)) {
+                    setQuantity(e.target.value);
+                  }
+                }}
                 value={quantity}
                 type="text"
                 className="border-solid border-gray-400 border-2 p-3 md:text-xl w-full"
@@ -76,7 +106,7 @@ const AddProduct = () => {
             </div>
             <div className="col-span-2 lg:col-span-1">
               <input
-                onChange={(e)=> setImage(e.target.value)}
+                onChange={(e) => setImage(e.target.value)}
                 value={image}
                 type="text"
                 className="border-solid border-gray-400 border-2 p-3 md:text-xl w-full"
@@ -86,7 +116,7 @@ const AddProduct = () => {
 
             <div className="col-span-2">
               <textarea
-                onChange={(e)=> setDescription(e.target.value)}
+                onChange={(e) => setDescription(e.target.value)}
                 value={description}
                 cols="30"
                 rows="8"

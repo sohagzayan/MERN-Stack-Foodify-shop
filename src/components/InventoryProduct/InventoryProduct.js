@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { AiOutlineDoubleRight } from 'react-icons/ai';
 import { FiHeart } from 'react-icons/fi';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const InventoryProduct = ({item}) => {
     const [like , setLike] = useState(false)
     const navigate = useNavigate()
-    const {image , foodCategory , quantity , price , supplier , title , _id} = item
+    const {image , foodCategory , quantity , price , supplier , title , _id , des} = item
+    // console.log(des.slice(0 , 200));
+    // const sliceDes = des.slice(0 , 200)
     return (
         <div className='mx-4 inventory_product'>
             <div className='pl-5 pr-5 mt-5'>
@@ -15,14 +17,18 @@ const InventoryProduct = ({item}) => {
             <div className='p-5'>
                 <span className='card-date'>March.02.2021</span>
                 <h4 className='tracking-wider font-light'>{foodCategory}</h4>
-                <h3 className='text-2xl mb-2 font-bold'>{title}</h3>
+                <h3 className='text-2xl  font-bold'>{title}</h3>
                 <h5 className='mb-2'><span className='text-lg font-semibold '>Supplier :</span>{supplier}</h5>
+                <p className='my-2 text-black_soft text-sm'>{des?.slice(0 , 120)}........</p>
                 <div className='flex items-center justify-between mb-3'>
                     <span className='text-3xl text-green_soft font-semibold'>${price}</span>
-                    <span className='text-md text-green_soft tracking-wider'><span className='text-3xl font-bold'>Q</span>uantity : <span className='text-2xl font-bold'>{quantity}</span></span>
+                    <span className='text-md text-green_soft tracking-wider'><span className='text-3xl font-bold'>Q</span>Quantity : <span className='text-2xl font-bold'>{quantity}</span></span>
                 </div>
                 <div className='flex items-center justify-between mb-4'>
-                    <NavLink to={"/inventory/"+_id} className='btn-product flex items-center'>Update <AiOutlineDoubleRight className='text-lg ml-5 ' /> </NavLink>
+                    <button onClick={()=> {
+                        console.log("hello word");
+                        navigate(`/inventory/${_id}`)
+                    }} to={"/inventory/"+_id} className='btn-product flex items-center cursor-pointer'>Update <AiOutlineDoubleRight className='text-lg ml-5 ' /> </button>
                     <span onClick={()=> setLike(!like)} className={like ? 'React-Love active cursor-pointer' : 'React-Love  cursor-pointer'}><FiHeart className='text-3xl love  text-yellow_soft' /></span>
                 </div>
             </div>

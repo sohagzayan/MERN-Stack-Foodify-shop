@@ -8,6 +8,7 @@ import Blog from "../pages/Blog";
 import Home from "../pages/Home";
 import InventoryDetails from "../pages/InventoryDetails";
 import ManageProduct from "../pages/ManageProduct";
+import MyProducts from "../pages/MyProducts/MyProducts";
 import Register from "../pages/Register";
 const AllRoutes = () => {
   return (
@@ -17,6 +18,7 @@ const AllRoutes = () => {
       <Route path="/Blog" element={<RequireAuth> <Blog /> </RequireAuth>} />
       <Route path="/manage" element={<ManageProduct />} />
       <Route path="/AddProduct" element={<AddProduct />} />
+      <Route path="/myProducts" element={<MyProducts />} />
       <Route path="/inventory/:id" element={<RequireAuth> <InventoryDetails /> </RequireAuth>} />
       <Route path="/register" element={<Register />}>
         <Route path="login" element={<Login />} />

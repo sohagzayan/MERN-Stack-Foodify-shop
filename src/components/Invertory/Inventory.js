@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import InventoryProduct from '../InventoryProduct/InventoryProduct';
 import './Inventory.css';
 const Inventory = () => {
-
+    
+    const navigate = useNavigate()
     const [allData , setAllData] = useState([])
 
     useEffect(()=>{
@@ -21,8 +23,8 @@ const Inventory = () => {
             />)}
                 
            </div>
-            <div className='text-center'>
-            <button className='btn-inventory mt-6'>
+            <div className='text-center mt-10'>
+            <button onClick={()=> navigate("/manage")} className='btn-inventory mt-6'>
                Manage Inventory
            </button>
             </div>
