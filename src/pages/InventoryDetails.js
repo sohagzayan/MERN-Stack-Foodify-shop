@@ -56,10 +56,13 @@ const InventoryDetails = () => {
       });
     }
   };
+
+
   const handleInput = (e) => {
     const re = /^[0-9\b]+$/;
     if (e.target.value === "" || re.test(e.target.value)) {
       setReStack(e.target.value);
+      e.target.value = 0
     }
   };
   return (

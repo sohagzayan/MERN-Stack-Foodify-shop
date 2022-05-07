@@ -62,7 +62,7 @@ const Menu = ({ showMenu, setShowMenu }) => {
         </li>
         {username ? (
           <li className="px-4 py-1">
-            <NavLink className="   text-black_soft font-medium text-lg " to="/">
+            <NavLink className="   text-black_soft font-medium text-lg " to="/manage">
               Manage Product
             </NavLink>
           </li>
@@ -71,7 +71,7 @@ const Menu = ({ showMenu, setShowMenu }) => {
         )}
         {username ? (
           <li className="px-4 py-1">
-            <NavLink className="   text-black_soft font-medium text-lg " to="/">
+            <NavLink className="   text-black_soft font-medium text-lg " to="/AddProduct">
               Add Product
             </NavLink>
           </li>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { CgMenu } from "react-icons/cg";
+import { NavLink } from "react-router-dom";
 import Menu from "../Menu/Menu";
 
 const Header = () => {
@@ -7,7 +8,7 @@ const Header = () => {
   return (
     <div className="  container mx-auto px-4 py-4 flex justify-between items-center">
       <div>
-        <span>
+        <NavLink to="/" className="cursor-pointer">
           <svg
             width="161"
             height="37"
@@ -56,7 +57,7 @@ const Header = () => {
               fill="#32B768"
             />
           </svg>
-        </span>
+        </NavLink>
       </div>
       <div>
         <div className="menuRow">

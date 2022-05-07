@@ -1,0 +1,44 @@
+.btn-addProduct {
+}
+.btn-addProduct {
+  background-color: #32b768;
+  box-shadow: 4px 4px 8px #b2b2b3, -9px -9px 12px #ffffff;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 10px;
+  text-transform: uppercase;
+  transition: 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-addProduct::after {
+  content: "";
+  background: red;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+.btn-addProduct:active {
+  transform: scale(0.8);
+}
+.btn-addProduct:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
+
+.addProduct div div input,
+textarea {
+  border: 1px solid #bfbfbf;
+  border-radius: 5px;
+  outline-color: tomato;
+}

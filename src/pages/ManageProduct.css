@@ -1,0 +1,54 @@
+.manageProductList {
+  width: 60%;
+  margin: auto;
+
+  padding: 30px;
+  background-color: #f3f3f5;
+  box-shadow: 9px 9px 12px #b2b2b3, -9px -9px 12px #ffffff;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.btn-manageInventory {
+  background-color: #32b768;
+  box-shadow: 4px 4px 8px #b2b2b3, -9px -9px 12px #ffffff;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 10px;
+  text-transform: uppercase;
+  transition: 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+}
+.btn-detailsPage {
+  background-color: #32b768;
+  margin-bottom: 20px;
+}
+
+.btn-delete {
+  background-color: tomato;
+}
+
+.btn-manageInventory::after {
+  content: "";
+  background: red;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+.btn-manageInventory:active {
+  transform: scale(0.8);
+}
+.btn-manageInventory:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
