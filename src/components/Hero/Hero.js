@@ -9,8 +9,8 @@ const Hero = () => {
       <div className="hero_content">
         <span className="text-2xl">Welcome To</span>
         <h2 className=" mb-6 text-black_soft heroTitle">
-          Our<span className="text-green_soft heroTitleHeilight">Foodify</span>{" "}
-          Restaurant.
+        Fresh  <span className="text-green_soft heroTitleHeilight">Grocery</span>{" "}
+        Food Shopping
         </h2>
         <p className="text-black_soft font-light">
           Is it amet, consectetur adipisicing elit. Dolore atque maiores libero

@@ -39,6 +39,13 @@ const AddProduct = () => {
         body: JSON.stringify(newProductDocuments),
       });
       notify()
+      setTitle('')
+      setCategory('')
+      setSupplier('')
+      setQuantity(0)
+      setImage('')
+      setDescription('')
+      setPrice(0)
     } catch (err) {
       console.log(err);
     }
