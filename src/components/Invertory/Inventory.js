@@ -8,7 +8,7 @@ const Inventory = () => {
     const [allData , setAllData] = useState([])
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/api/todo?limit=6`)
+        fetch(`https://farmfood-freshbox-api.herokuapp.com/api/todo?limit=6`)
         .then(res => res.json())
         .then(data => setAllData(data))
     },[allData])

@@ -11,12 +11,12 @@ const InventoryDetails = () => {
   const [detailsProduct, setDetailsProduct] = useState({});
   const [reStack, setReStack] = useState(0);
   const { id } = useParams();
-  const { image, quantity, price, supplier, title, foodCategory } =
+  const { image, quantity, des, price, supplier, title, foodCategory } =
     detailsProduct;
 
   /* details product find */
   useEffect(() => {
-    fetch(`http://localhost:5000/api/todo/${id}`)
+    fetch(`https://farmfood-freshbox-api.herokuapp.com/api/todo/${id}`)
       .then((res) => res.json())
 
       .then((data) => setDetailsProduct(data));
@@ -34,7 +34,7 @@ const InventoryDetails = () => {
       hh();
     } else {
       let update = prev - 1;
-      fetch(`http://localhost:5000/api/todo/${id}`, {
+      fetch(`https://farmfood-freshbox-api.herokuapp.com/api/todo/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ quantity: update }),
@@ -49,7 +49,7 @@ const InventoryDetails = () => {
     if (reStack === "" || reStack <= 0) {
       return alert("not allow");
     } else {
-      fetch(`http://localhost:5000/api/todo/${id}`, {
+      fetch(`https://farmfood-freshbox-api.herokuapp.com/api/todo/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -83,6 +83,7 @@ const InventoryDetails = () => {
               </h2>
               <span className="text-md">Supplier : {supplier}</span>
               <span className="text-black_soft py-1 ">Price : {price} </span>
+              <span className="text-black_soft py-1 ">Details : {des} </span>
               <span className="text-black_soft">
                 Quantity : 
                 <small className="text-2xl font-bold text-green_soft tracking-wider">

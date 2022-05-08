@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import ForgotPassword from "../components/ForgotPasswordn/ForgotPassword";
 import Login from "../components/Login/Login";
+import NotFound404 from "../components/NotFound404/NotFound404";
 import RequireAuth from "../components/privateRoute/RequireAuth";
 import Signup from "../components/Signup/Signup";
 import AddProduct from "../pages/AddProduct";
@@ -26,6 +27,7 @@ const AllRoutes = () => {
         <Route path="Signup" element={<Signup />} />
         <Route path="forgotPassword" element={<ForgotPassword />} />
       </Route>
+      <Route path="*" element={<NotFound404 />} />
     </Routes>
   );
 };

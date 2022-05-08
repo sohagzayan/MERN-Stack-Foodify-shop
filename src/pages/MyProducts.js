@@ -11,7 +11,7 @@ const MyProducts = () => {
   const { username } = useAuthContext();
   const [myItem, setMyItem] = useState([]);
   useEffect(() => {
-    axios(`http://localhost:5000/api/todo/myitem?gmail=${username.email}`,{
+    axios(`https://farmfood-freshbox-api.herokuapp.com/api/todo/myitem?gmail=${username.email}`,{
       headers : {
         authorization : `Bearer ${localStorage.getItem("accessToken")}`
       }

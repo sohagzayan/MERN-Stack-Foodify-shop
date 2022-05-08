@@ -18,7 +18,7 @@ const ManageList = ({ item }) => {
           icon: "success",
         });
 
-        fetch(`http://localhost:5000/api/todo/${id}`, {
+        fetch(`https://farmfood-freshbox-api.herokuapp.com/api/todo/${id}`, {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
         });

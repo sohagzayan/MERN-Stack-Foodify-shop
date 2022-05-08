@@ -28,7 +28,7 @@ const Login = () => {
     const {email, password} = data
     try{
      await login(email , password)
-     await fetch("http://localhost:5000/api/todo/gettoken",{
+     await fetch("https://farmfood-freshbox-api.herokuapp.com/api/todo/gettoken",{
        method : "POST",
       headers: {
         'Content-Type': 'application/json'
