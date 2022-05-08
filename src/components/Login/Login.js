@@ -28,6 +28,15 @@ const Login = () => {
     const {email, password} = data
     try{
      await login(email , password)
+     await fetch("http://localhost:5000/api/todo/gettoken",{
+       method : "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({"gmail" : "gdsohag360@gmail.com"})
+     }) 
+     .then(res => res.json())
+     .then(data => localStorage.setItem("accessToken" , data.token))
      navigate(from , {replace : true})
     }
     catch(err){

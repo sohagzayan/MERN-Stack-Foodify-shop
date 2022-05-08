@@ -1,17 +1,37 @@
 import React from 'react';
 import { AiOutlineDoubleRight } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
+import swal from 'sweetalert';
 
 const MyProductFrame = ({item}) => {
     const {image , foodCategory , quantity , price , supplier , title , _id , des}  = item
     const navigate = useNavigate()
-
+     
     const handleDelete = (id)=>{
-        fetch(`http://localhost:5000/api/todo/${id}`, {
+
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this imaginary file!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              swal("Poof! Your imaginary file has been deleted!", {
+                icon: "success",
+              });
+              fetch(`http://localhost:5000/api/todo/${id}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
        
         });
+            } else {
+              swal("Your imaginary file is safe!");
+            }
+          });
+
+        
     }
 
 

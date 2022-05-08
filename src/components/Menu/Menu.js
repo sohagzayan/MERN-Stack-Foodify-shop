@@ -51,18 +51,18 @@ const Menu = ({ showMenu, setShowMenu }) => {
           <AiOutlineClose onClick={() => setShowMenu(!showMenu)} />
         </span>
         <li className="px-4 py-1">
-          <NavLink className="   text-black_soft font-medium text-lg " to="/">
+          <NavLink className={({isActive})=> isActive ? "text-blue-600 font-medium text-lg " : "   text-black_soft font-medium text-lg"} to="/">
             Home
           </NavLink>
         </li>
         <li className="px-4 py-1">
-          <NavLink className="   text-black_soft font-medium text-lg " to="/blog">
+          <NavLink className={({isActive})=> isActive ? "text-blue-600 font-medium text-lg " : "   text-black_soft font-medium text-lg"} to="/blog">
             Blog
           </NavLink>
         </li>
         {username ? (
           <li className="px-4 py-1">
-            <NavLink className="   text-black_soft font-medium text-lg " to="/manage">
+            <NavLink className={({isActive})=> isActive ? "text-blue-600 font-medium text-lg " : "   text-black_soft font-medium text-lg"} to="/manage">
               Manage Product
             </NavLink>
           </li>
@@ -71,7 +71,7 @@ const Menu = ({ showMenu, setShowMenu }) => {
         )}
         {username ? (
           <li className="px-4 py-1">
-            <NavLink className="   text-black_soft font-medium text-lg " to="/AddProduct">
+            <NavLink className={({isActive})=> isActive ? "text-blue-600 font-medium text-lg " : "   text-black_soft font-medium text-lg"} to="/AddProduct">
               Add Product
             </NavLink>
           </li>
@@ -81,7 +81,7 @@ const Menu = ({ showMenu, setShowMenu }) => {
         {username ? (
           <li className="px-4 py-1">
             <NavLink
-              className=" capitalize  text-black_soft font-medium text-lg "
+              className={({isActive})=> isActive ? "text-blue-600 font-medium text-lg " : "   text-black_soft font-medium text-lg"}
               to="/myProducts"
             >
               My Product
@@ -95,7 +95,7 @@ const Menu = ({ showMenu, setShowMenu }) => {
             username ? 
             <span
             onClick={openModal}
-            className="   text-black_soft font-medium text-lg cursor-pointer"
+            className=" font-bold  tracking-wider text-black_soft text-lg cursor-pointer"
             
           >
            SignOut
@@ -103,7 +103,7 @@ const Menu = ({ showMenu, setShowMenu }) => {
           :
           <NavLink
           onClick={handesignOut}
-          className="   text-black_soft font-medium text-lg"
+          className={({isActive})=> isActive ? "text-blue-600 font-medium text-lg " : "   text-black_soft font-medium text-lg"}
           to="/register/login"
         >
           Login

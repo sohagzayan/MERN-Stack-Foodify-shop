@@ -3,15 +3,26 @@ import React, { useState } from "react";
 import GoogleButton from "react-google-button";
 import { useForm } from "react-hook-form";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from 'react-toastify';
 import * as yup from "yup";
 import { useAuthContext } from "../../context/AuthContent";
+
 const Signup = () => {
   const location = useLocation()
   const from = location.state?.from?.pathname || '/';
-  const { sinUp , googleLogin } = useAuthContext();
+  const { sinUp , googleLogin , varyFayEmail } = useAuthContext();
   const navigate = useNavigate();
   const [error, setError] = useState("");
   console.log(error);
+  const notify = () => toast("Send VeriFecation Your gmail!",{
+    position: "top-left",
+    autoClose: 6000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
 
   let schema = yup.object().shape({
     username: yup.string().required(),
@@ -35,7 +46,9 @@ const Signup = () => {
     }
     try {
       await sinUp(email, password);
-      navigate("/register/login");
+      await varyFayEmail()
+      notify()
+      // navigate("/register/login");
     } catch (err) {
       setError(err.message);
     }
@@ -57,6 +70,9 @@ const Signup = () => {
 
   return (
     <div>
+        <ToastContainer 
+         />
+
       <h2 className="text-3xl text-black_soft font-bold mb-5">
         Sign up for free!
       </h2>

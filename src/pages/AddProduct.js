@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { toast, ToastContainer } from 'react-toastify';
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import { useAuthContext } from "../context/AuthContent";
 import "./addProduct.css";
+
+
 const AddProduct = () => {
   const { username } = useAuthContext();
   console.log(username.email);
@@ -13,6 +16,7 @@ const AddProduct = () => {
   const [quantity, setQuantity] = useState("");
   const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
+  const notify = () => toast(" Products Successfully added !");
 
   const handleAddProduct = async (e) => {
     e.preventDefault();
@@ -24,7 +28,7 @@ const AddProduct = () => {
       supplier: supplier,
       price: price,
       quantity: quantity,
-      gmail : username.email
+      gmail: username.email,
     };
     try {
       await fetch("http://localhost:5000/api/todo/", {
@@ -34,7 +38,7 @@ const AddProduct = () => {
         },
         body: JSON.stringify(newProductDocuments),
       });
-      console.log("success to add product");
+      notify()
     } catch (err) {
       console.log(err);
     }
@@ -42,6 +46,7 @@ const AddProduct = () => {
   return (
     <>
       <Header />
+      <ToastContainer />
       <div className="max-w-3xl bg-white py-10 px-5 m-auto w-full mt-10">
         <div className="text-3xl mb-6 text-center font-bold text-black_soft ">
           ADD PRODUCT YOUR OWN
@@ -50,6 +55,7 @@ const AddProduct = () => {
           <div className="grid grid-cols-2 gap-4 max-w-xl m-auto">
             <div className="col-span-2 lg:col-span-1">
               <input
+                required
                 onChange={(e) => setCategory(e.target.value)}
                 value={category}
                 type="text"
@@ -60,6 +66,7 @@ const AddProduct = () => {
 
             <div className="col-span-2 lg:col-span-1">
               <input
+                required
                 onChange={(e) => setTitle(e.target.value)}
                 value={title}
                 type="text"
@@ -69,6 +76,7 @@ const AddProduct = () => {
             </div>
             <div className="col-span-2 lg:col-span-1">
               <input
+                required
                 onChange={(e) => setSupplier(e.target.value)}
                 value={supplier}
                 type="text"
@@ -78,6 +86,7 @@ const AddProduct = () => {
             </div>
             <div className="col-span-2 lg:col-span-1">
               <input
+                required
                 onChange={(e) => {
                   const re = /^[0-9\b]+$/;
                   if (e.target.value === "" || re.test(e.target.value)) {
@@ -92,6 +101,7 @@ const AddProduct = () => {
             </div>
             <div className="col-span-2 lg:col-span-1">
               <input
+                required
                 onChange={(e) => {
                   const re = /^[0-9\b]+$/;
                   if (e.target.value === "" || re.test(e.target.value)) {
@@ -106,6 +116,7 @@ const AddProduct = () => {
             </div>
             <div className="col-span-2 lg:col-span-1">
               <input
+                required
                 onChange={(e) => setImage(e.target.value)}
                 value={image}
                 type="text"
@@ -116,6 +127,7 @@ const AddProduct = () => {
 
             <div className="col-span-2">
               <textarea
+                required
                 onChange={(e) => setDescription(e.target.value)}
                 value={description}
                 cols="30"

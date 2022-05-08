@@ -52,23 +52,24 @@ const InventoryDetails = () => {
       fetch(`http://localhost:5000/api/todo/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ quantity: parseInt(quantity) + parseInt(reStack) }),
+        body: JSON.stringify({
+          quantity: parseInt(quantity) + parseInt(reStack),
+        }),
       });
+      setReStack(0);
     }
   };
-
 
   const handleInput = (e) => {
     const re = /^[0-9\b]+$/;
     if (e.target.value === "" || re.test(e.target.value)) {
       setReStack(e.target.value);
-      e.target.value = 0
     }
   };
+
   return (
     <>
       <Header />
-
       <div className="my-14">
         <div className="container mx-auto p-5 flex justify-around lg:flex-row flex-col">
           <div>
@@ -83,9 +84,15 @@ const InventoryDetails = () => {
               <span className="text-md">Supplier : {supplier}</span>
               <span className="text-black_soft py-1 ">Price : {price} </span>
               <span className="text-black_soft">
-                Quantity :{" "}
+                Quantity : 
                 <small className="text-2xl font-bold text-green_soft tracking-wider">
                   {quantity}
+                </small>
+              </span>
+              <span className="">
+                Stack :
+                <small className="text-2xl text-red-400 font-bold tracking-widest">
+                  {quantity <= 0 ? "sold" : "available"}
                 </small>
               </span>
               <button
