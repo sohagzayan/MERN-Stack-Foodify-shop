@@ -31,7 +31,7 @@ const AddProduct = () => {
       gmail: username.email,
     };
     try {
-      await fetch("http://localhost:5000/api/todo/", {
+      await fetch("https://farmfood-freshbox-api.herokuapp.com/api/todo/", {
         method: "POST", // or 'PUT'
         headers: {
           "Content-Type": "application/json",

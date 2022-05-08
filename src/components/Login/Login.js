@@ -33,7 +33,7 @@ const Login = () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({"gmail" : "gdsohag360@gmail.com"})
+      body: JSON.stringify({"gmail" : email})
      }) 
      .then(res => res.json())
      .then(data => localStorage.setItem("accessToken" , data.token))

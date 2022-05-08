@@ -6,7 +6,8 @@ import Menu from "../Menu/Menu";
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   return (
-    <div className="  container mx-auto px-4 py-4 flex justify-between items-center">
+    <div className="sticky top-0 bg-white_soft z-50">
+      <div className="  container mx-auto px-4 py-4 flex justify-between items-center">
       <div>
         <NavLink to="/" className="cursor-pointer">
           <svg
@@ -70,6 +71,7 @@ const Header = () => {
           />
         </div>
       </div>
+    </div>
     </div>
   );
 };
