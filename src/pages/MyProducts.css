@@ -1,0 +1,46 @@
+.btn-delete {
+}
+
+.btn-myProduct {
+  background-color: #32b768;
+  box-shadow: 4px 4px 8px #b2b2b3, -9px -9px 12px #ffffff;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 10px;
+  text-transform: uppercase;
+  transition: 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+}
+.btn-myUpdate {
+  background-color: #32b768;
+  margin-right: 15px;
+}
+
+.btn-MyDelete {
+  background-color: tomato;
+}
+
+.btn-myProduct::after {
+  content: "";
+  background: red;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+.btn-myProduct:active {
+  transform: scale(0.8);
+}
+.btn-myProduct:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}

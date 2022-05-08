@@ -9,7 +9,7 @@ import Blog from "../pages/Blog";
 import Home from "../pages/Home";
 import InventoryDetails from "../pages/InventoryDetails";
 import ManageProduct from "../pages/ManageProduct";
-import MyProducts from "../pages/MyProducts/MyProducts";
+import MyProducts from "../pages/MyProducts";
 import Register from "../pages/Register";
 const AllRoutes = () => {
   return (

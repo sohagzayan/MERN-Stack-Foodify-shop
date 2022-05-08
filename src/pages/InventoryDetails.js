@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineCloudDownload } from "react-icons/ai";
 import { MdDeliveryDining, MdManageAccounts } from "react-icons/md";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import swal from "sweetalert";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
@@ -113,10 +113,10 @@ const InventoryDetails = () => {
           <hr className="border-2 border-green_soft opacity-30 my-7" />
         </div>
       </div>
-      <div className="flex container mx-auto flex justify-center">
-        <button className="btn-inventory flex items-center my-10">
+      <div className="flex container mx-auto  justify-center">
+        <NavLink to="/manage" className="btn-inventory flex items-center my-10">
           MANAGE INVENTORY <MdManageAccounts className="text-2xl ml-4" />
-        </button>
+        </NavLink>
       </div>
       <Footer />
     </>

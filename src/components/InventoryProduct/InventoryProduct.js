@@ -45,7 +45,9 @@ export default InventoryProduct;
 //       "title" : " Sounded like a good title for a board for multi-varieties of apples..", 
 //       "supplier" : "Leanne Graham" ,
 //       "price" : "4",
-//       "quantity" : "30"
+//       "quantity" : "30",
+//       "gmail" : "gdsohag360@gmail.com"
+    
 //     },
 //     {
 //       "image" : "https://i.postimg.cc/26p5LSL0/pro-img-07.jpg" ,
@@ -53,7 +55,8 @@ export default InventoryProduct;
 //       "title" : "Fresh dryed almod (30gm)", 
 //       "supplier" : "Ervin Howell" ,
 //       "price" : "7",
-//       "quantity" : "10"
+//       "quantity" : "10",
+//       "gmail" : "gdsohag360@gmail.com"
 //     },
 //     {
 //       "image" : "https://i.postimg.cc/t4TJLfHN/pro-img-1.jpg" ,
@@ -61,7 +64,8 @@ export default InventoryProduct;
 //       "title" : "Fresh litchi 100% organic.", 
 //       "supplier" : "Jonker Mahabub" ,
 //       "price" : "3",
-//       "quantity" : "25"
+//       "quantity" : "25",
+//       "gmail" : "gdsohag360@gmail.com"
 //     },
 //     {
 //       "image" : "https://i.postimg.cc/SxJQZMWZ/pro-img-11.jpg" ,
@@ -69,7 +73,8 @@ export default InventoryProduct;
 //       "title" : "Sp.red fresh guava", 
 //       "supplier" : "Samantha" ,
 //       "price" : "15",
-//       "quantity" : "30"
+//       "quantity" : "30",
+//       "gmail" : "gdsohag360@gmail.com"
 //     },
 //     {
 //       "image" : "https://i.postimg.cc/nzvh4fvp/pro-img-2.jpg" ,
@@ -77,7 +82,8 @@ export default InventoryProduct;
 //       "title" : "Fresh & healty Eggplant food", 
 //       "supplier" : "Karianne" ,
 //       "price" : "12",
-//       "quantity" : "33"
+//       "quantity" : "33",
+//       "gmail" : "gdsohag360@gmail.com"
 //     },
 //     {
 //       "image" : "https://i.postimg.cc/wMgTF4VJ/pro-img-4.jpg" ,
@@ -85,7 +91,8 @@ export default InventoryProduct;
 //       "title" : "Fresh litchi 100% organic and fresh food", 
 //       "supplier" : "Chelsey Dietrich" ,
 //       "price" : "20",
-//       "quantity" : "12"
+//       "quantity" : "12",
+//       "gmail" : "gdsohag360@gmail.com"
 //     },
 //     {
 //       "image" : "https://i.postimg.cc/sxmfLP6L/pro-img-5.jpg" ,
@@ -93,7 +100,8 @@ export default InventoryProduct;
 //       "title" : "Vegetable tomato fresh and teste", 
 //       "supplier" : "Leopoldo_Corkery" ,
 //       "price" : "26",
-//       "quantity" : "44"
+//       "quantity" : "44",
+//       "gmail" : "gdsohag360@gmail.com"
 //     },
 //     {
 //       "image" : "https://i.postimg.cc/gcH0rdzK/pro-img-6.jpg" ,
@@ -101,7 +109,8 @@ export default InventoryProduct;
 //       "title" : "Natural grassbean and total new item", 
 //       "supplier" : "Elwyn.Skiles" ,
 //       "price" : "50",
-//       "quantity" : "17"
+//       "quantity" : "17",
+//       "gmail" : "gdsohag360@gmail.com"
 //     },
 //     {
 //       "image" : "https://i.postimg.cc/CKn1Kq5Z/pro-img-7-1.jpg" ,
@@ -109,7 +118,8 @@ export default InventoryProduct;
 //       "title" : "new product Fresh dryed almod (50gm)", 
 //       "supplier" : "Elwyn.Skiles" ,
 //       "price" : "50",
-//       "quantity" : "17"
+//       "quantity" : "17",
+//       "gmail" : "gdsohag360@gmail.com"
 //     },
 //     {
 //       "image" : "https://i.postimg.cc/656pvSTx/pro-img-8.jpg" ,
@@ -117,7 +127,8 @@ export default InventoryProduct;
 //       "title" : "Orange juice (5ltr) foraner item", 
 //       "supplier" : "Elwyn.Skiles" ,
 //       "price" : "8",
-//       "quantity" : "22"
+//       "quantity" : "22",
+//       "gmail" : "gdsohag360@gmail.com"
 //     },
 //     {
 //       "image" : "https://i.postimg.cc/FsPsgZJd/pro-img-9.jpg" ,
@@ -125,6 +136,7 @@ export default InventoryProduct;
 //       "title" : "Organic coconet (5ltr) juice fresh", 
 //       "supplier" : "Elwyn.Skiles" ,
 //       "price" : "37",
-//       "quantity" : "22"
+//       "quantity" : "22",
+//       "gmail" : "gdsohag360@gmail.com"
 //     },
 // ]
