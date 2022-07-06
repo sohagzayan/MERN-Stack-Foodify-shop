@@ -1,7 +1,7 @@
 # Warehouse Management 
 # Live Link : https://our-foodify.web.app/
 
-# details 
+# Details 
 
 Website for fruits warehouse management
 Users can account and can upload their product
