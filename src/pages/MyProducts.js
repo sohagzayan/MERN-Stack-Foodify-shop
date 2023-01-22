@@ -17,7 +17,7 @@ const MyProducts = () => {
     const jwtT = async () => {
       try {
         const { data } = await axios(
-          `https://farmfood-freshbox-api.herokuapp.com/api/todo/myitem?gmail=${username.email}`,
+          `https://warehouse-management-serve-production.up.railway.app/api/todo/myitem?gmail=${username.email}`,
           {
             headers: {
               authorization: `Bearer ${localStorage.getItem("accessToken")}`,

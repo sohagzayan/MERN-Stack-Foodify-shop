@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { toast, ToastContainer } from 'react-toastify';
+import { toast, ToastContainer } from "react-toastify";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import { useAuthContext } from "../context/AuthContent";
 import "./addProduct.css";
-
 
 const AddProduct = () => {
   const { username } = useAuthContext();
@@ -31,21 +30,24 @@ const AddProduct = () => {
       gmail: username.email,
     };
     try {
-      await fetch("https://farmfood-freshbox-api.herokuapp.com/api/todo/", {
-        method: "POST", // or 'PUT'
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newProductDocuments),
-      });
-      notify()
-      setTitle('')
-      setCategory('')
-      setSupplier('')
-      setQuantity(0)
-      setImage('')
-      setDescription('')
-      setPrice(0)
+      await fetch(
+        "https://warehouse-management-serve-production.up.railway.app/api/todo/",
+        {
+          method: "POST", // or 'PUT'
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newProductDocuments),
+        }
+      );
+      notify();
+      setTitle("");
+      setCategory("");
+      setSupplier("");
+      setQuantity(0);
+      setImage("");
+      setDescription("");
+      setPrice(0);
     } catch (err) {
       console.log(err);
     }

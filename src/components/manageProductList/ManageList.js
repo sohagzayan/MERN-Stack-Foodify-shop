@@ -18,10 +18,13 @@ const ManageList = ({ item }) => {
           icon: "success",
         });
 
-        fetch(`https://farmfood-freshbox-api.herokuapp.com/api/todo/${id}`, {
-          method: "DELETE",
-          headers: { "Content-Type": "application/json" },
-        });
+        fetch(
+          `https://warehouse-management-serve-production.up.railway.app/api/todo/${id}`,
+          {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+          }
+        );
       } else {
         swal("Your imaginary file is safe!");
       }
